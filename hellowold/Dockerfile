@@ -5,13 +5,13 @@ FROM node:16-alpine
 WORKDIR /app
 
 # Copy the package.json and package-lock.json files to the working directory
-COPY hellowold/package*.json ./
+COPY package*.json ./
 
 # Install application dependencies
 RUN npm install
 
 # Copy the rest of the application source code to the working directory
-COPY hellowold/ .
+COPY . .
 
 # Build the React application
 RUN npm run build
